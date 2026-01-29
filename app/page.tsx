@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-// import { createClient } from "@supabase/supabase-js";
-
+import { createClient } from "@supabase/supabase-js";
 /* =============================================================================
    SECTION 1) TYPES (Data models used across the page)
 ============================================================================= */
@@ -224,10 +223,10 @@ function safeFileName(name: string) {
   return name.replace(/[^\w.\-]+/g, "_");
 }
 
-// const supabase = createClient(
-  // process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  // process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-// );
+const supabase = createClient(
+process.env.NEXT_PUBLIC_SUPABASE_URL!,
+process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 // Put your bucket name here:
 const MEDIA_BUCKET = "car-media";
